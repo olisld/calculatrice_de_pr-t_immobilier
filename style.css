@@ -1,0 +1,69 @@
+body{
+    overflow-x:hidden;
+    width: 600px;
+}
+
+.alignement_middle{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.font_style{
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100,
+        "YTLC" 500;
+}
+.alignement{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+
+}
+.inline{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+}
+label{
+    margin: 10px;
+}
+input{
+    margin: 10px 0px 10px 10px;
+    border-radius: 0px;
+    border: 1px solid black;
+}
+.formulaire{
+    display: flex;
+    justify-content: center;  
+}
+#bouton{
+    background-color: rgb(0, 0, 125);
+    color: white;
+    border-radius: 10px;
+    margin-left: 5px;
+    
+}
+.inline_blue{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.unité{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #234B68;
+    color: white;
+    width: 30px;
+    height: 19px;
+    margin-bottom: 0.5px;
+    font-size: 13px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

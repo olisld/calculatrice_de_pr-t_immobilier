@@ -7,74 +7,93 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        
+
     </head>
     <body>
-        <div class="alignement_middle">
-
-            <h1 class="font_style">Calculatrice de prêt immobilier</h1>
+        <div class="inline_blue2">
+            <img src="image/Fichier 2-8 1.png" alt="logo">
         </div>
+        <div class="formulaire_total">
+            <div class="alignement_middle">
 
-<!-- formulaire ou l'utilisateur rentre ses données à calculer -->
-        <form action="" method="" id="formulaire"> 
-
-<!--div servant à reduire la taille de la bordure de la div en dessous  -->
-            <div class="formulaire">
-
-<!-- div servant à organiser la structure du forrmulaire -->
-                <div class="inline">
-
-<!-- div servant à organiser la structure des labels dans le formulaire -->
-                    <div class="alignement">
-                        <label for="emprunt" class="font_style">Montant emprunté</label>
-                        <label for="taux_nominal" class="font_style">Taux nominal</label>
-                        <label for="remboursement" class="font_style">Durée de remboursement</label>
-                    </div>
+                <h1 class="font_style">Calculatrice de prêt immobilier</h1>
+            
+            <!-- formulaire ou l'utilisateur rentre ses données à calculer -->
+                <form action="" method="" id="formulaire"> 
+        
+        <!--div servant à reduire la taille de la bordure de la div en dessous  -->
+                    <div class="formulaire">
+        
+        <!-- div servant à organiser la structure du forrmulaire -->
+                        <div class="inline">
+        
+        <!-- div servant à organiser la structure des labels dans le formulaire -->
+                            <div class="alignement">
+                                <label for="emprunt" class="font_style">Montant emprunté</label>
+                                <label for="taux_nominal" class="font_style">Taux nominal</label>
+                                <label for="remboursement" class="font_style">Durée de remboursement</label>
+                            </div>
 
 <!-- div servant à organiser la structure des inputs dans le formulaire -->
-                    <div class="alignement">
-                        <div class="inline_blue">
-                            <input id="emprunt" type="text" placeholder="Montant" name="emprunt">
-                            <div class="unité">
-                                €
+                            <div class="alignement">
+                                <div class="inline_blue">
+                                    <input id="emprunt" type="text" placeholder="Montant" name="emprunt" inputmode="decimal" >
+                                    <div class="unité">
+                                        €
+                                    </div>
+                                </div>
+                                <div class="inline_blue">
+                                    <input id="taux_nominal" type="text" placeholder="Taux" name="taux_nominal" inputmode="decimal">
+                                    <div class="unité">
+                                        %
+                                    </div>
+                                </div>
+                                <div class="inline_blue">
+                                    <input id="remboursement" type="text" placeholder="Durée en année" name="remboursement" inputmode="decimal">
+                                    <div class="unité">
+                                        an(s)
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="inline_blue">
-                            <input id="taux_nominal" type="text" placeholder="Taux" name="taux_nominal">
-                            <div class="unité">
-                                %
-                            </div>
-                        </div>
-                        <div class="inline_blue">
-                            <input id="remboursement" type="text" placeholder="Durée en année" name="remboursement">
-                            <div class="unité">
-                                an(s)
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+<!-- div affichant un message d'erreur si le formulaire est vide -->
+                        <div class="message_erreur_montant_emprunté message_erreur"></div>
+                        <div class="message_erreur_taux_nominal message_erreur"></div>
+                        <div class="message_erreur_durée_de_remboursement message_erreur"></div>
 <!-- bouton du formulaire servant à le soumettre -->
-                    <button type="submit" id="bouton" class="font_style">Soumettre</button>
-                
-            </div>        
-        </form>
-        
+                        <div class="bouton">
+                            <button type="submit"  class="font_style bouton_blue">Calculer</button>
+                        </div>
+                    </div>        
+                </form>
+            </div>
+        </div>       
 <!-- tableau qui dois afficher le résultat du calcul de prêt immobilier -->
-        <table>
-            <thead>
-                <td>
-                    <tr>Mois</tr>
-                    <tr>Solde initial</tr>
-                    <tr>Échéance</tr>
-                    <tr>Intérêts</tr>
-                    <tr>Amortissement</tr>
-                    <tr>Solde restant</tr>
-                </td>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
+
+        <div class="tableau_amortissement">
+            <h1>Tableau d'Amortissement</h1>
+            <table id="tableau">
+                <thead>
+                    <tr>
+                        <td>Mois</td>
+                        <td>Solde initial</td>
+                        <td>Échéance</td>
+                        <td>Intérêts</td>
+                        <td>Amortissement</td>
+                        <td class="last_td">Solde restant</td>
+                    </tr>
+                </thead>
+                <tbody>               
+                </tbody>   
+                </table>
+                <div class="alignement">
+                <button type="" class="bouton_blue" id="bouton_pdf">Télecharger en PDF</button>
+                </div>
+        </div>
         <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
     </body>
 </html>

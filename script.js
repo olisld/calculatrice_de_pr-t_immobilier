@@ -26,9 +26,7 @@ formulaire.addEventListener('submit',function(event){
     let Durée_remboursement=document.querySelector('#remboursement').value
 
 // affichage de ses contenues dans la console
-    console.log(Montant_emprunté)
-    console.log(Taux_nominal)
-    console.log(Durée_remboursement)
+    
 
 //conversion des données en nombres
     Montant_emprunté=parseInt(Montant_emprunté)
@@ -42,6 +40,8 @@ formulaire.addEventListener('submit',function(event){
     
     let tableau= document.querySelector("#tableau").getElementsByTagName('tbody')[0];
     let tableau2= document.querySelector('.tableau_amortissement')
+
+    let tab_erreur= new Array
 
 
 //réalisation des fonctions de test pr les champs du formulaire
@@ -69,9 +69,12 @@ formulaire.addEventListener('submit',function(event){
         isGreaterThan(Montant_emprunté,1000)&&
         isLowerThan(Montant_emprunté,1000000)
     ){
+        
         return true
+        
     }
     else{
+        // tab_erreur.push('Veuillez saisir un montant valide')
         return false
     }
     }
@@ -83,9 +86,11 @@ formulaire.addEventListener('submit',function(event){
         isGreaterThan(Taux_nominal,0)&&
         isLowerThan(Taux_nominal,30)
     ){
+        
         return true
     }
     else{
+        // tab_erreur.push('Veuillez saisir un taux nominal valide')
         return false
     }
     }
@@ -97,16 +102,28 @@ formulaire.addEventListener('submit',function(event){
         isGreaterThan(Durée_remboursement,0)&&
         isLowerThan(Durée_remboursement,30)
     ){
+        
         return true
     }
     else{
+        // tab_erreur.push('Veuillez saisir une durée de remboursement valide')
         return false
     }
     }
 
-// console.log('montant emprunté: ',validé_montant_emprunté(Montant_emprunté))
-// console.log('Taux nominal: ',validé_taux_nominal(Taux_nominal))
-// console.log('Durée de remboursement: ',validé_durée_remboursement(Durée_remboursement))
+// test de la gestion d'erreur avec un tableau
+
+    // validé_montant_emprunté(Montant_emprunté,tab_erreur)
+    // validé_taux_nominal(Taux_nominal,tab_erreur)
+    // validé_durée_remboursement(Durée_remboursement,tab_erreur)
+    // console.log(tab_erreur)
+
+    // tab_erreur.forEach(element => {
+    //     const div_erreur=document.querySelector('.message_erreur')
+    //     div_erreur.innerHTML= `<b> ${element} </b>`
+    // });
+
+    
 
 
 // gérer le tableau d'erreur pour afficher ensuite le bon message d'erreur
@@ -117,6 +134,7 @@ formulaire.addEventListener('submit',function(event){
         const erreur_durée_de_rembourssement= document.querySelector('.message_erreur_durée_de_remboursement')
         if (validé_durée_remboursement(Durée_remboursement)===false){
             console.log('ok remboursement')
+            erreur_durée_de_rembourssement.style.display='block'
             erreur_durée_de_rembourssement.innerHTML= '<b>Veuillez saisir une durée de remboursement valide</b>'
                 // alert('champ de durée de remboursement invalide')
                 tableau2.style.display='none'
@@ -126,7 +144,7 @@ formulaire.addEventListener('submit',function(event){
         else    {
             console.log('remboursement')
             tableau2.style.display='block'
-            erreur_durée_de_rembourssement.innerHTML=''
+            erreur_durée_de_rembourssement.style.display='none'
             champ_durée_remboursement.classList.remove('erreur')
     }}
 
@@ -136,6 +154,7 @@ formulaire.addEventListener('submit',function(event){
 
         if (validé_taux_nominal(Taux_nominal)===false){
             console.log('ok tauxnominal')
+            erreur_taux_nominal.style.display='block'
             erreur_taux_nominal.innerHTML= '<b>Veuillez saisir un taux nominal valide</b>'
                 // alert('champ de durée de remboursement invalide')
                 tableau2.style.display='none'
@@ -145,7 +164,7 @@ formulaire.addEventListener('submit',function(event){
         else    {
             console.log('taux_nominal')
             tableau2.style.display='block'
-            erreur_taux_nominal.innerHTML=''
+            erreur_taux_nominal.style.display='none'
             champ_taux_nominal.classList.remove('erreur')
     }}
 
@@ -154,6 +173,7 @@ formulaire.addEventListener('submit',function(event){
         const erreur_montant_emprunté= document.querySelector('.message_erreur_montant_emprunté')
         if (validé_montant_emprunté(Montant_emprunté)===false){
             console.log('ok montant emprunté')
+             erreur_montant_emprunté.style.display='block'
             erreur_montant_emprunté.innerHTML= '<b>Veuillez saisir un montant valide</b>'
                 // alert('champ de durée de remboursement invalide')
                 tableau2.style.display='none'
@@ -163,7 +183,7 @@ formulaire.addEventListener('submit',function(event){
         else    {
             console.log('montant')
             tableau2.style.display='block'
-            erreur_montant_emprunté.innerHTML=''
+            erreur_montant_emprunté.style.display='none'
             champ_montant_emprunté.classList.remove('erreur')
     }}
 

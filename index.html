@@ -2,6 +2,7 @@
 <html lang="FR">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculatrice de prêt immobilier</title>
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +18,7 @@
         <div class="formulaire_total">
             <div class="alignement_middle">
 
-                <h1 class="font_style">Calculatrice de prêt immobilier</h1>
+                <h1 class="font_style" id="titre">Calculatrice de prêt immobilier</h1>
             
             <!-- formulaire ou l'utilisateur rentre ses données à calculer -->
                 <form action="" method="" id="formulaire"> 
@@ -30,29 +31,44 @@
         
         <!-- div servant à organiser la structure des labels dans le formulaire -->
                             <div class="alignement">
-                                <label for="emprunt" class="font_style">Montant emprunté</label>
-                                <label for="taux_nominal" class="font_style">Taux nominal</label>
-                                <label for="remboursement" class="font_style">Durée de remboursement</label>
+                                
+                                
+                                
                             </div>
 
 <!-- div servant à organiser la structure des inputs dans le formulaire -->
                             <div class="alignement">
                                 <div class="inline_blue">
-                                    <input id="emprunt" type="text" placeholder="Montant" name="emprunt" inputmode="decimal" >
-                                    <div class="unité">
-                                        €
+                                    <div class="label">
+                                        <label for="emprunt" class="font_style">Montant emprunté</label>
                                     </div>
+                                    <div class="symbole">
+                                        <input id="emprunt" type="text" placeholder="Montant" name="emprunt" inputmode="decimal" >
+                                        <div class="unité">
+                                            €
+                                        </div>
+                                    </div>    
                                 </div>
                                 <div class="inline_blue">
-                                    <input id="taux_nominal" type="text" placeholder="Taux" name="taux_nominal" inputmode="decimal">
-                                    <div class="unité">
-                                        %
+                                    <div  class="label">
+                                        <label for="taux_nominal" class="font_style">Taux nominal</label>
                                     </div>
+                                    <div class="symbole">
+                                        <input id="taux_nominal" type="text" placeholder="Taux" name="taux_nominal" inputmode="decimal">
+                                        <div class="unité">
+                                            %
+                                        </div>
+                                    </div>    
                                 </div>
                                 <div class="inline_blue">
-                                    <input id="remboursement" type="text" placeholder="Durée en année" name="remboursement" inputmode="decimal">
-                                    <div class="unité">
-                                        an(s)
+                                    <div class="label">
+                                        <label for="remboursement" class="font_style">Durée de remboursement</label>
+                                    </div>
+                                    <div class="symbole">
+                                        <input id="remboursement" type="text" placeholder="Durée en année" name="remboursement" inputmode="decimal">
+                                        <div class="unité">
+                                            an(s)
+                                        </div>
                                     </div>
                                 </div>
                             </div>
